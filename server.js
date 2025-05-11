@@ -36,6 +36,13 @@ app.use("/api/mlm", require("./routes/mlm"));
 // Health check
 app.get("/", (req, res) => res.send("🎰 Crypto Casino API is live"));
 
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "API is live",
+  });
+});
+
 app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
 });
